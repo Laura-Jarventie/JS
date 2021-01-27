@@ -19,3 +19,14 @@ else {
     console.log(basicSalary+extraHours+doubleHours);
 }
 
+
+
+/*
+if (chosenNumber + secondchosenNumber + thirdchosenNumber + fourthchosenNumber + fifthchosenNumber === 5)
+   // JACKPOT
+
+if (chosenNumber + secondchosenNumber + thirdchosenNumber + fourthchosenNumber + fifthchosenNumber === 0)
+// congrant no win
+
+if (chosenNumber + secondchosenNumber + thirdchosenNumber + fourthchosenNumber + fifthchosenNumber === 4)
+//smaller price */
