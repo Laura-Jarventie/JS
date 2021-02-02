@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap"
+      rel="stylesheet"
+    />
+    <title>BG Generator</title>
+    <link rel="stylesheet" href="style_color.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Generat custom gradient background is easy:</h1>
+      <form>
+        <h2>At first, choose the direction:</h2>
+        <div class="direction">
+          <input type="radio" name="direction" id="lefttoright" />
+          <label for="lefttoright">Left to rigth</label>
+        </div>
+        <div class="direction">
+          <input type="radio" name="direction" id="righttoleft" />
+          <label for="righttoleft">Right to Left</label>
+        </div>
+        <div class="direction">
+          <input type="radio" name="direction" id="toptobottom" />
+          <label for="toptobottom">Top to Bottom</label>
+        </div>
+        <div class="direction">
+          <input type="radio" name="direction" id="bottomtotop" />
+          <label for="bottomtotop">Bottom to Top</label>
+        </div>
+        <h2>Second, choose colors:</h2>
+        <input type="color" id="color1" value="#e47a69" />
+        <input type="color" id="color2" value="#a0387f" />
+
+        <h2>Third, generate your gradient:</h2>
+        <input type="submit" value="Generate" />
+      </form>
+
+      <h2>Finally, copy your CSS code:</h2>
+      <p></p>
+    </div>
+    <script src="color.js"></script>
+  </body>
+</html>
