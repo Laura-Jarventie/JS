@@ -1,4 +1,4 @@
-const NUMBER_OF_BULBS = 50;
+const NUMBER_OF_BULBS = 20;
 const DELAY = 400;
 const WINNING_BULB_INDEX = 5;
 
@@ -65,6 +65,6 @@ function stopInterval() {
         el.style.transform = `rotate(${rotate}deg) translate(${radius}) rotate(${rotateReverse}deg)`;
     })
 }
-
+arrangeBulbsInACircle(document.getElementsByClassName('bulb'));
   
   
