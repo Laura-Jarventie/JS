@@ -1,16 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Bulb game</title>
-    <link rel="stylesheet" href="Bulb_game.css" />
-  </head>
-  <body>
-    <div id="bulbs"></div>
-    <button id="myBtn">STOP</button>
-      <p id="demo"></p>
-      <script src="Bulb_game.js"></script>
-    </div>
-  </body>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bulb game</title>
+  <link rel="stylesheet" href="Bulb_game.css" />
+</head>
+
+<body>
+  <div id="bulbs"></div>
+  <input type="range" id="speed" name="speed" min="100" max="500" />
+  <label for="speed">How fast can you handle?</label>
+
+  <input type="amount of bulbs" id="bulbAmount" name="bulbAmount" min="10" max="50" />
+  <label for="bulbAmount">How many light bulbs?</label>
+  <button id="startBtn">START</button>
+  <button id="stopBtn">STOP</button>
+  <p id="demo"></p>
+  <script src="Bulb_game.js"></script>
+  </div>
+</body>
+
 </html>
