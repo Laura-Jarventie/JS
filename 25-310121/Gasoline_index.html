@@ -1,34 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>4_gasoline_price</title>
-    <link rel="stylesheet" href="main.css">
-</head>
-<body>
+    <link rel="stylesheet" href="main.css" />
+  </head>
+  <body>
     <h1>Gasoline Price Calculator</h1>
     <p>
-        Make a program that asks the price of the gasoline and amount of money from the user. The program calculates how much gasoline the user gets with the money. The result is displayed to screen.
+      Make a program that asks the price of the gasoline and amount of money
+      from the user. The program calculates how much gasoline the user gets with
+      the money. The result is displayed to screen.
     </p>
     <form>
-    <!-- <form> use form to wrap inputs. it says to HTM to wrap header, main and footer -->
-<div>
- <label for="price">Price</label> <!-- label "" write something inside, that tell´s to js that label and input belong together. label for täytyy olla sama kuin id. Instead of label they are connected next to eachother and if you click Price it will go automatically to text field-->
-<input type="number" id="price"/> <!--you get also the name=.. that you can take away, as normally that is for database-->
-</div>
-<div>
-    <label for="money">Money</label>
-    <input type="number" id="money"/>
-    </div>
+      <!-- <form> use form to wrap inputs. it says to HTM to wrap header, main and footer -->
+      <div>
+        <label for="price">Price</label>
+        <!-- label "" write something inside, that tell´s to js that label and input belong together. label for täytyy olla sama kuin id. Instead of label they are connected next to eachother and if you click Price it will go automatically to text field-->
+        <input type="number" id="price" />
+        <!--you get also the name=.. that you can take away, as normally that is for database-->
+      </div>
+      <div>
+        <label for="money">Money</label>
+        <input type="number" id="money" />
+      </div>
     </form>
-    <!--<button onclick="hello()">Calculate</button>-->
-    <button>Calculate</button>
-   
-    <p>You can buy: <span id="answer"></span> liter of gasoline</p>
-    <script src="basic_excercises.js"></script>
-    
-</body>>
-</body>
-</html>
+    <button onclick="calculate()">Calculate</button>
 
+    <p>You can buy: <span id="answer"></span> liter of gasoline</p>
+    <script src="gasoline.js"></script>
+
+    <!--span is inline element what you can enter where ever you want-->
+  </body>
+</html>

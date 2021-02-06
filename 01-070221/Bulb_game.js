@@ -4,43 +4,57 @@ const WINNING_BULB_INDEX = 5;
 
 let counter = 0;
 let arrayOfBulbs = [];
+let solution = document.querySelector("#solution");
 
-//creating bulbs
-while (counter < NUMBER_OF_BULBS) {
-  const newEl = document.createElement("div"); //create´s tag
-  newEl.className = "bulb"; //name for the tag
-  document.getElementById("bulbs").appendChild(newEl); //places the creted tag
 
-  arrayOfBulbs[counter] = false;
-  counter++;
-}
 
-//reset the pointer back to first bulb
+
+
+document.getElementById("startBtn").addEventListener("click", ()
+  => {
+  const userInput = document.getElementsById("speed").value,
+    blinkingSpeed = userInput ? userInput : DELAY;
+  bulbInput = document.getElementsById("bulbAmount").value,
+  numberOfBulbs = bulbsInput ? bulbsInput : NUMBER_OF_BULBS;
+
+    //creating bulbs
+while (counter < bulbAmount) {
+    const newEl = document.createElement("div"); //create´s tag
+    newEl.className = "bulb"; //name for the tag
+    document.getElementById("bulbs").appendChild(newEl); //places the creted tag
+
+    arrayOfBulbs[counter] = false;
+    counter++;
+  }
+
+  //reset the pointer back to first bulb
 counter = 0;
 arrayOfBulbs[counter] = true; //initial bulb
 document.getElementsByClassName("bulb")[counter].classList.add("active"); //active=lightened bulb
 document
   .getElementsByClassName("bulb")
-  [WINNING_BULB_INDEX].classList.add("chosen"); //the bulb we have decided to be winning eg the targeted bulb we try to hit
+[WINNING_BULB_INDEX].classList.add("chosen"); //the bulb we have decided to be winning eg the targeted bulb we try to hit
 
-let myVar = setInterval(() => {
-  // swithc off the current bulb
-  arrayOfBulbs[counter] = false;
-  document.getElementsByClassName("bulb")[counter].classList.remove("active");
-  // unless it is already the last bulb
-  if (counter < NUMBER_OF_BULBS - 1) {
-    //if not -1 it will create extra bulb
-    counter++; // get the next bubl in the arrey
-  } else {
-    counter = 0; // reset
-  }
+  const myVar = setInterval(() => {
+    // swithc off the current bulb
+    arrayOfBulbs[counter] = false;
+    document
+      .getElementsByClassName("bulb")
+    [counter].classList.remove("active");
+    // unless it is already the last bulb
+    if (counter < numberOfBulbs - 1) {
+      //if not -1 it will create extra bulb
+      counter++; // get the next bubl in the arrey
+    } else {
+      counter = 0; // reset
+    }
 
-  arrayOfBulbs[counter] = true;
-  document.getElementsByClassName("bulb")[counter].classList.add("active");
+    arrayOfBulbs[counter] = true;
+    document.getElementsByClassName("bulb")[counter].classList.add("active");
 
-  console.clear();
-  console.log(arrayOfBulbs);
-}, DELAY);
+
+  }, blinkingSpeed);
+
 
 /*document.getElementById('myBtn').addEventListener('click', () => {
 clearInterval(myVar);
@@ -55,13 +69,15 @@ if (
 
 document.getElementById("stopBtn").addEventListener("click", stopInterval);
 
+let text;
 function stopInterval() {
   clearInterval(myVar);
   if ((arrayOfBulbs[counter] = true === arrayOfBulbs[WINNING_BULB_INDEX])) {
-    alert("JIIIHAA, YOU MADE IT!");
+    text = "JIIIHAA, YOU MADE IT!";
   } else {
-    alert("No win, try again");
+    text = "No win, try again";
   }
+  solution.textContent = text;
 }
 
 const arrangeBulbsInACircle = (nodes) => {

@@ -1,24 +1,28 @@
-
 function calculate() {
-    let price = Number(document.getElementById("price").value);
-    let money = Number(document.querySelector("money").value);
-    let answer = document.getElementById("answer");
-    /* two options either by id or query*/
-    /*
+  let price = Number(document.getElementById("price").value);
+  let money = Number(document.querySelector("#money").value);
+  let answer = document.getElementById("answer");
+  /* different options: by id or query OBS if using query, you need to put # , or if you take by class .price or .money Query selector takes first that is finds, query all takes all. Safest to use is by ID*/
+  /*
     const calculate = (price, money, answer) => console.log("answer")*/
 
-    /*
-    console.log(price);
-    console.log(money);
-    console.log(price * money);*/
-if (answer < 10) {
-    console.log ("good you can escape now")
-} else {
-    console.log("Ups, you have to stay here")
+  let liter = money / price;
+  /*
+  if (liter > 10) {
+    console.log("good you can escape now");
+  } else {
+    console.log("Ups, you have to stay here");
+
+    answer.textContent = liter;
+  }
+  */
+  console.log(
+    (liter =
+      liter > 10 ? "good you can escape now" : "Ups, you have to stay here")
+  );
 }
 
-    // don´t need console.log they were just for testing
+/* could be also some other but text content is the safest
+  if you put return it means that function stops there. After return nothing happens. It is like break in switch.
 
-    answer.textContent = money / price;
-    // could be also some other but text content is the safest
-}
+  row 2-3 you need to specify the type with capital: Number. input type="number" in HTML is for the user, he can´t enter letters. JS reads the value as string unless we tell JS to read it as Number. */

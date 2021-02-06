@@ -9,13 +9,13 @@ body {
   width: 20px;
   background-color: green;
   margin: 5px;
-  display: absolute;
+  display: ;
   border-radius: 10px;
   -webkit-transition: background-color 0.1s ease-out;
   -moz-transition: background-color 0.1s ease-out;
   -o-transition: background-color 0.1s ease-out;
   transition: background-color 0.1s ease-out;
-  position: relative;
+  position: absolute;
 }
 
 #bulbs {
@@ -23,7 +23,7 @@ body {
   left: 500px;
   height: 500px;
   width: 500px;
-  position: relative;
+  position: absolute;
 }
 
 .bulb.active {
