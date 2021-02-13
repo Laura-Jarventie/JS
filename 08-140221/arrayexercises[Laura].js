@@ -194,14 +194,12 @@ let expectedEmails = [
   "hermione@email.com",
   "ginnyforever@gmail.com",
 ];
-
-function filterItems(arr, query) {
-  return arr.filter(function (el) {
-    return el.toLowerCase().indexOf(query.toLowerCase()) !== -1;
-  });
-}
 let expectedEmails = [];
-expectedEmails = [filterItems(peopleInfo, "@")];
+expectedEmails = peopleInfo.filter((el) => {
+  if (el.includes("@")) {
+    return el;
+  }
+});
 
 let expectedNumbers = [];
 expectedNumbers = peopleInfo.filter((el) => {
