@@ -85,6 +85,13 @@ expectedResult = [
   false,
 ];
 
+let expectedArray = [];
+fifthArray.forEach((el) => {
+  if (expectedArray.includes(el) === false) {
+    expectedArray.push(el);
+  }
+});
+
 /**
  * Task 4: You are provided 2 arrays
  * write a logic that will compare elements of the 2 arrays to find out if they contain same elements
@@ -100,6 +107,26 @@ let seventhArray = ["hello", false, 1, 3, true, 2];
 // eighthArray and ninthArray are not
 let eighthArray = [1, 2, true, false, "hello", 3, "moi moi"];
 let ninthArray = [];
+
+sixthArray.sort();
+seventhArray.sort();
+
+for (let i = 0; i < sixthArray.length; i++) {
+  if (sixthArray[i] === seventhArray[i]) {
+    console.log("matching");
+  } else {
+    console.log("not matching");
+  }
+}
+
+/*OR with forEach() method:*/
+sixthArray.forEach((el) => {
+  if (seventhArray.includes(el) === false) {
+    console.log("not matching");
+  } else {
+    console.log("matching");
+  }
+});
 
 /**
  * Task 5: The following array is nested (having array inside array)
@@ -139,6 +166,8 @@ expectedResult = [
   true,
 ];
 
+let expectedArray = tenthArray.toString();
+
 /**
  * Task 6: The array you are given contains all kinds of personal information
  * Filter out all email addresses into a separate array
@@ -166,6 +195,28 @@ let expectedEmails = [
   "ginnyforever@gmail.com",
 ];
 
+function filterItems(arr, query) {
+  return arr.filter(function (el) {
+    return el.toLowerCase().indexOf(query.toLowerCase()) !== -1;
+  });
+}
+let expectedEmails = [];
+expectedEmails = [filterItems(peopleInfo, "@")];
+
+let expectedNumbers = [];
+expectedNumbers = peopleInfo.filter((el) => {
+  const splitted = el.split("");
+  const containNumber = splitted.some((el) => !Number.isNaN(parseInt(el)));
+  return containNumber;
+});
+
+let expectedNamesArray = [];
+expectedNamesArray = peopleInfo.filter((el) => {
+  const containNumber = el.split("").some((el) => !Number.isNaN(parseInt(el)));
+  if (containNumber) return false;
+  return el.indexOf("@") === -1;
+});
+
 /**
  * Task 7: The current array contains a sample text
  * use the .split(' ') method to split the paragraph to an array of words
@@ -180,3 +231,13 @@ let expectedEmails = [
 
 const sample =
   "Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis quod, soluta debitis reiciendis recusandae necessitatibus consequatur. Et odit quas quis, nulla sequi voluptatem, impedit optio, illo nihil at distinctio aliquid.";
+
+let splitted = sample.split(" ");
+let expectedArray = [];
+splitted.filter((el) => {
+  if (el.includes("o")) {
+    expectedArray.push(1);
+  } else {
+    expectedArray.push(0);
+  }
+});
