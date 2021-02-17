@@ -1,0 +1,9 @@
+body {
+  background-color: cadetblue;
+}
+
+tr {
+  display: flex;
+
+  justify-content: space-between;
+}
