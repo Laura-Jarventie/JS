@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="Stylesheet" href="day_counter.css" />
+    <title>Day counter</title>
+  </head>
+  <body>
+    <head>
+      Second countdown doesn´t work. It is not running and also the amount of
+      days is calculated one too much.
+    </head>
+    <form>
+      <div>
+        <label for="endDay">Enter end day</label>
+        <input type="date" id="endDay" />
+
+        <label for="event">Enter event</label>
+        <input type="text" id="event" />
+      </div>
+    </form>
+    <button onclick="calculate()">Submit</button>
+
+    <div class="printout">
+      <p id="answer"></p>
+      <p id="happening"></p>
+      <p id="workDays"></p>
+    </div>
+    <p id="demo"></p>
+
+    <form>
+      <div>
+        <label for="startDay">Enter start day</label>
+        <input type="date" id="startDay" />
+        <label for="newEndDay">Enter end day</label>
+        <input type="date" id="newEndDay" />
+
+        <label for="secondEvent">Enter event</label>
+        <input type="text" id="secondEvent" />
+      </div>
+    </form>
+    <button onclick="secondCalculate()">Submit</button>
+
+    <div class="printout">
+      <p id="secondAnswer"></p>
+      <p id="secondHappening"></p>
+      <p id="secondWorkDays"></p>
+    </div>
+    <p id="secondDemo"></p>
+    <script src="day_counter.js"></script>
+  </body>
+</html>

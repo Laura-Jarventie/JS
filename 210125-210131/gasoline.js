@@ -1,12 +1,21 @@
 function calculate() {
-  let price = Number(document.getElementById("price").value);
+  let price = Number(document.querySelector("#price").value);
   let money = Number(document.querySelector("#money").value);
-  let answer = document.getElementById("answer");
+  let answer = document.querySelector("#answer");
+  let solution = document.querySelector("#solution");
   /* different options: by id or query OBS if using query, you need to put # , or if you take by class .price or .money Query selector takes first that is finds, query all takes all. Safest to use is by ID*/
   /*
     const calculate = (price, money, answer) => console.log("answer")*/
 
-  let liter = money / price;
+  let liter = Math.floor(money / price);
+  let text;
+
+  liter >= 10
+    ? (text = "Good, you can escape now")
+    : (text = "Ups, you have to stay here");
+
+  answer.textContent = `You can buy ${liter} litres of gasoline`;
+  solution.textContent = text;
   /*
   if (liter > 10) {
     console.log("good you can escape now");

@@ -1,0 +1,47 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body,
+input {
+  font-family: "Source Sans Pro", sans-serif;
+}
+
+body {
+  background-color: rgb(211, 119, 85);
+}
+
+div {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+input {
+  margin-bottom: 1rem;
+  width: 10rem;
+  background-color: rgb(178, 192, 178);
+}
+
+button {
+  background: #333;
+  display: block;
+  border-radius: 10%;
+  padding: 8px;
+  color: white;
+  border: none;
+}
+#demo {
+  text-align: center;
+  font-size: 60px;
+  margin-top: 0px;
+}
+
+#secondDemo {
+  text-align: center;
+  font-size: 60px;
+  margin-top: 0px;
+}

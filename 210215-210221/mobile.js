@@ -1,13 +1,14 @@
 let header = docoment.querySelector("header");
 let buttonBackToTop = document.getElementsById("backToTop");
 let nav = document.querySelector("nav");
-let mobileButton = document.getElementsById("mobileButton");
+let buttonMobile = document.getElementsById("mobileButton");
 let links = document.querySelectorAll("nav ul li a");
+
+
 
 window.onscroll = function () {
   scrollFunction();
 };
-
 
 const scrollFunction = () => {
   if (
@@ -22,25 +23,26 @@ const scrollFunction = () => {
   }
 };
 
-cosnt getToTop = () => {
-    document.body.scrollTop = 0;
-    document.documentElement.scrollTop = 0;
+const getToTop = () => {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
 };
 
 let links = document.querySelectorAll("nav ul li a");
-const mobMenu = () => {
-    for (let i = 0; i < links.length; i++){  
-    links[i].addEventListener("click", mobMenu);
-}
-if (nav.classList.toggle("responsive")){
-  nav.classList.remove("responsive");
-  document.body.style.overflow = "";
-} else {
-  nav.classList.add("responsive");
-  document.body.style.overflow = "hidden";      
-}
-};
 
+const mobMenu = () => {
+  for (let i = 0; i < links.length; i++) {
+    links[i].addEventListener("click", mobMenu);
+  }
+  if (nav.classList.toggle("responsive"));
+  {
+    nav.classList.remove("responsive");
+    document.body.style.overflow = "";
+  } else {
+    nav.classList.add("responsive");
+    document.body.style.overflow = "hidden";
+  }
+};
 
 buttonBackToTop.addEventListener("click", getToTop);
 buttonMobile.addEventListener("click", mobMenu);
@@ -66,4 +68,4 @@ function topFunction() {
 }
 
 let buttonMobile = document.getElementsById("mobileButton");
-buttonMobile.addEventListener("click", mobMenu);
+buttonMobile.addEventListener("click", mobMenu);*/
