@@ -37,7 +37,6 @@ header {
   top: 0;
   background-color: white;
   width: 100%;
-  width: 100%;
 }
 
 #mobileButton {
@@ -104,12 +103,13 @@ footer {
 
   nav.resposive ul {
     display: block;
-    background-color: white;
+    background-color: rgb(155, 46, 46);
     position: absolute;
     width: 100%;
     left: 0;
     top: 86px;
   }
+
   nav.resposive ul li {
     display: block;
   }

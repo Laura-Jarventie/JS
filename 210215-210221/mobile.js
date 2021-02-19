@@ -1,10 +1,8 @@
-let header = docoment.querySelector("header");
-let buttonBackToTop = document.getElementsById("backToTop");
+let header = document.querySelector("header");
+let buttonBackToTop = document.getElementById("backToTop");
 let nav = document.querySelector("nav");
-let buttonMobile = document.getElementsById("mobileButton");
+let buttonMobile = document.getElementById("mobileButton");
 let links = document.querySelectorAll("nav ul li a");
-
-
 
 window.onscroll = function () {
   scrollFunction();
@@ -28,14 +26,11 @@ const getToTop = () => {
   document.documentElement.scrollTop = 0;
 };
 
-let links = document.querySelectorAll("nav ul li a");
-
 const mobMenu = () => {
   for (let i = 0; i < links.length; i++) {
     links[i].addEventListener("click", mobMenu);
   }
-  if (nav.classList.toggle("responsive"));
-  {
+  if (nav.classList.contains("responsive")) {
     nav.classList.remove("responsive");
     document.body.style.overflow = "";
   } else {
@@ -56,9 +51,9 @@ window.onscroll = function () {
 
 function scrollFunction() {
   if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-   
+
   } else {
-  
+
   }
 }
 
