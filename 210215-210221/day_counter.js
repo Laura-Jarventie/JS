@@ -14,10 +14,7 @@ function calculate() {
   let weeks = Math.floor(workDays / 7);
   workDays -= weeks * 2;
 
-  answer.textContent = `There is ${diffDays} days until`;
-  happening.textContent = event + ",";
-
-  workingDays.textContent = `which is ${workDays} working days.`;
+  answer.textContent = `There is ${diffDays} days until ${event}, which is ${workDays} working days.`;
 
   var countDownDate = endDay.getTime();
   var x = setInterval(function () {
@@ -62,10 +59,7 @@ function secondCalculate() {
   let newWeeks = Math.floor(newWorkDays / 7);
   newWorkDays -= newWeeks * 2;
 
-  secondAnswer.textContent = `There is ${newDiffDays - 1} days until`;
-  secondHappening.textContent = secondEvent + ",";
-
-  secondWorkingDays.textContent = `which is ${newWorkDays - 1} working days.`;
+  secondAnswer.textContent = `There is ${newDiffDays} days until ${secondEvent}, which is ${newWorkDays} working days. `;
 
   var newCountDownDate = newEndDay.getTime();
   var y = setInterval(function () {

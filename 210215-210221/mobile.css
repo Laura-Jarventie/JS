@@ -24,7 +24,7 @@ footer {
 }
 
 .bg {
-  background-color: tomato;
+  background-color: rgb(212, 112, 112);
 }
 
 /* Header remember with position fixed ALWAYS give place as well: top/bottom/left or right*/
@@ -101,16 +101,16 @@ footer {
     display: none;
   }
 
-  nav.resposive ul {
+  nav.responsive ul {
     display: block;
-    background-color: rgb(155, 46, 46);
+    background-color: white;
     position: absolute;
     width: 100%;
     left: 0;
     top: 86px;
   }
 
-  nav.resposive ul li {
+  nav.responsive ul li {
     display: block;
   }
 
