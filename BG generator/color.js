@@ -16,13 +16,11 @@ const setGradient = (event) => {
     }
   }
 
-  console.log("Wow, this is actually working");
-  console.log(color1.value);
-  console.log(color2.value);
+  console.log(direction);
 
   document.body.style.backgroundImage = `linear-gradient(${selectedValue}, ${color1.value}, ${color2.value})`;
 
-  text.textContent = `background-image: linear-gradient(from start to end direction, ${color1.value}, ${color2.value});`;
+  text.textContent = `background-image: linear-gradient(${selectedValue}, ${color1.value}, ${color2.value});`;
 };
 
 form.addEventListener("submit", setGradient);
