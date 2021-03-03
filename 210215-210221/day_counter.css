@@ -10,7 +10,7 @@ input {
 }
 
 body {
-  background-color: rgb(211, 119, 85);
+  background-color: rgb(240, 157, 128);
 }
 
 div {
@@ -23,7 +23,11 @@ div {
 input {
   margin-bottom: 1rem;
   width: 10rem;
-  background-color: rgb(178, 192, 178);
+  background-color: white;
+}
+
+label {
+  display: inline-block;
 }
 
 button {

@@ -1,3 +1,7 @@
+/*this is the excersice 4-6. Nro 5 anwer is that code is not working if Scrip.js injection is in Header. For nro 6 test User is getting added to table because that function happens when html is loaded
+
+window.addEventListener("DOMContentLoaded", executeScript);
+
 function executeScript() {
   var table = document.getElementById("myTable");
   var row = table.insertRow(2);
@@ -8,8 +12,18 @@ function executeScript() {
   cell2.innerHTML = "test user";
   cell3.innerHTML = "9999";
 }
-
-executeScript();
+*/
+(function () {
+  function addRow(usersObj) {
+    let newRow = document.createElement("tr");
+    newRow.innerHTML = `   
+  <td>${usersObj.studentNo}</td>
+  <td>${usersObj.name}</td>
+  <td>${usersObj.age}</td>  
+  `;
+    document.querySelector(`#myTable.content`).appendChild(newRow);
+  }
+})();
 
 const getUsers = () => [
   {
@@ -28,36 +42,30 @@ const getUsers = () => [
     age: 17,
   },
   {
-    studentNo: 222,
-    name: "Snipe",
-    age: 12,
+    studentNo: -1,
+    name: "Snape",
+    age: 55,
   },
   {
-    studentNo: 12,
+    studentNo: -1,
     name: "Hagrid",
-    age: 15,
+    age: 65,
   },
 ];
 
 const users = getUsers();
 
-function addUser({ studentNo, name, age }) {
-  this.studentNo = studentNo;
-  this.name = name;
-  this.age = age;
+function addUser(user) {
+  console.log("does this work?");
 }
 
-for (var i = 0; i < users.length; i++) {
-  addUser(users);
-}
+users.forEach(addUser);
 
+This is for task nro 4
 function getOldest(users) {
-  for (var i = 0; i < users.length; i++) {
-    console.log(user.name);
-  }
-  console.log(user.name);
+  
 }
-console.log(users.name);
+
 /*
 var userList = users;
 var userToAdd = new addUser(userList);
@@ -82,14 +90,9 @@ let laura = new User(000, "Laura", 40);
 
 Users.push(laura);
 
-function executeScript() {
-  let test = new User(123, "test", 999);
-  Users.push(test);
-}
 
 
 
-window.addEventListener("DOMContentLoaded", (event) => {
-  console.log("DOM fully loaded and parsed");
-});
+
+
 */

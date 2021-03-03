@@ -1,7 +1,6 @@
 function calculate() {
   let answer = document.querySelector("#answer");
   let event = document.getElementById("event").value;
-  let workingDays = document.querySelector("#workDays");
 
   let oneDay = 24 * 60 * 60 * 1000;
   let today = new Date();

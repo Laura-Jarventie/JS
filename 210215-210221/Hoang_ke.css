@@ -7,3 +7,7 @@ tr {
 
   justify-content: space-between;
 }
+
+td {
+  margin-right: 2rem;
+}
