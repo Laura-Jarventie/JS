@@ -14,56 +14,74 @@ function executeScript() {
 }
 */
 (function () {
-  function addRow(usersObj) {
-    let newRow = document.createElement("tr");
-    newRow.innerHTML = `   
-  <td>${usersObj.studentNo}</td>
-  <td>${usersObj.name}</td>
-  <td>${usersObj.age}</td>  
-  `;
-    document.querySelector(`#myTable.content`).appendChild(newRow);
-  }
+  window.addEventListener("DOMContentLoaded", console.log("ready"));
+  const users = getUsers(); //when page is load, we get unsorted arrey of user objects//
+  document.getElementById("sortButton").addEventListener("click", (event) => {
+    const sortedUsers = users.sort((a, b) => b.age - a.age);
+    console.log(sortedUsers);
+    renderTable(sortedUsers);
+  });
+
+  renderTable(users);
+
+  const oldestPerson = getOldest(users);
+  console.log("the oldest person is", oldestPerson.name, oldestPerson.age);
 })();
 
-const getUsers = () => [
-  {
-    studentNo: 123,
-    name: "harry",
-    age: 15,
-  },
-  {
-    studentNo: 234,
-    name: "Ron",
-    age: 16,
-  },
-  {
-    studentNo: 135,
-    name: "Hermione",
-    age: 17,
-  },
-  {
-    studentNo: -1,
-    name: "Snape",
-    age: 55,
-  },
-  {
-    studentNo: -1,
-    name: "Hagrid",
-    age: 65,
-  },
-];
-
-const users = getUsers();
-
-function addUser(user) {
-  console.log("does this work?");
+function renderTable(userObjs) {
+  document.getElementById("myTable").innerHTML = ``; //clear the table content
+  userObjs.forEach((user) => addUser(user)); //iterate through user objecets array, and for each of them adds user (ie calls addUser function).//
 }
 
-users.forEach(addUser);
+function getOldest(userObjs) {
+  let oldest = userObjs[0];
+  for (let i = 1; i < userObjs.leght; i++) {
+    if (userObjs[i].age > oldest.age) {
+      oldest = userObjs[i];
+    }
+  }
+  return oldest;
+}
+//add user function expects array of userObjects as input and for each objects (ie user) add´s new row.//
+function addUser(userObj) {
+  let newRow = document.createElement("tr");
+  newRow.innerHTML = `   
+<td>${userObj.studentNo}</td>
+<td>${userObj.name}</td>
+<td>${userObj.age}</td>  
+<td>${userObj.studentNo > 0}</td> 
+`;
+  document.querySelector(`#myTable`).appendChild(newRow);
+}
 
-This is for task nro 4
-function getOldest(users) {
-  
+function getUsers() {
+  return [
+    {
+      studentNo: 123,
+      name: "harry",
+      age: 15,
+    },
+    {
+      studentNo: 234,
+      name: "Ron",
+      age: 16,
+    },
+    {
+      studentNo: 135,
+      name: "Hermione",
+      age: 17,
+    },
+    {
+      studentNo: -1,
+      name: "Snape",
+      age: 55,
+    },
+    {
+      studentNo: -1,
+      name: "Hagrid",
+      age: 65,
+    },
+  ];
 }
 
 /*
