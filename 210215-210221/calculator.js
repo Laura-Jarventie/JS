@@ -53,7 +53,7 @@ document.querySelectorAll(".operators > div").forEach((button) => {
       case "-":
         operation = "-";
         break;
-      case "x":
+      case "*":
         operation = "*";
         break;
       case "÷":
