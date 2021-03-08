@@ -1,23 +1,55 @@
-let answer = document.querySelector("#answer");
+let form = document.querySelector("form"); //because we have only one form, no need to specify.
+let text = document.querySelector("#answer");
+let countdown = document.querySelector("#timer");
 
 let alldays = [];
 let businessdays = [];
 let countdowntimer;
 
+//by default submit reloads the page and we loose info. If we would have used onclick, we would not need to use this.
 const daysLeft = (event) => {
   event.preventDefault();
 
-  let today = new Date();
-  let endDay = new Date(document.querySelector("#endDay").value);
-  let happening = document.getElementById("happening").value;
+  let startDate = new Date(document.getElementById("start").value);
+  let endDate = new Date(document.getElementById("end").value);
+  let title = document.getElementById("title").value;
 
-  while (today < endDay) {
-    today.setDate(today.getDay() + 1);
-    alldays.push(today);
-    if (today.getDay() !== 6 && today.getDay() !== 0) {
-      businessdays.push(today);
+  while (startDate < endDate) {
+    startDate.setDate(startDate.getDate() + 1);
+    alldays.push(startDate);
+    if (startDate.getDay() !== 6 && startDate.getDay() !== 0) {
+      businessdays.push(startDate);
     }
   }
+  //getDate and getDay are instance methods
 
-  answer.textContent = `There is ${alldays.length} days until ${happening}, which is ${businessdays.length} working days.`;
+  text.textContent = `There are ${alldays.length} days and ${businessdays.length} workdays until ${title}.`;
+
+  form.reset();
+  alldays = [];
+  businessdays = [];
+
+  thisismytimerfunction(endDate, title);
 };
+
+const thisismytimerfunction = (endDate, title) => {
+  console.log(endDate);
+  if (countdowntimer) {
+    clearInterval(countdowntimer);
+  }
+
+  countdowntimer = setInterval(function () {
+    let now = new Date();
+    let timeleft = endDate - now;
+
+    let days = Math.floor(timeleft / (1000 * 60 * 60 * 24));
+    let hours = Math.floor((timeleft / (1000 * 60 * 60)) % 24);
+    let minutes = Math.floor((timeleft / 1000 / 60) % 60);
+    let seconds = Math.floor((timeleft / 1000) % 60);
+
+    countdown.textContent = `Countdown from today to ${title}: ${days} days ${hours} hours ${minutes} minutes ${seconds} seconds`;
+  }, 1000);
+};
+
+form.addEventListener("submit", daysLeft);
+//so when input type submit happens, function daysLeft activates.

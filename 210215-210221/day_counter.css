@@ -10,7 +10,12 @@ input {
 }
 
 body {
-  background-color: rgb(240, 157, 128);
+  background-color: rgb(223, 161, 139);
+}
+
+form {
+  width: 80vw;
+  margin-left: 2vw;
 }
 
 div {

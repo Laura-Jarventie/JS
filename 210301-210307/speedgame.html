@@ -13,29 +13,24 @@
   </head>
   <body>
     <div class="container">
-      <header>
-        <h1>SPEEDGAME</h1>
-      </header>
-      <main>
-        <section id="center">
-          <p>Your score</p>
-          <div class="balls">
-            <div id="ball1"></div>
-            <div id="ball2"></div>
-            <div id="ball3"></div>
-            <div id="ball4"></div>
-          </div>
-        </section>
-        <section id="bottom">
-          <nav>
-            <button onclick="startGame()">Start game</button>
-            <button id="stopGame">Stop game</button>
-          </nav>
-        </section>
+      <h1>SPEEDGAME</h1>
+      <section id="center">
+        <p id="score">Your score:</p>
+        <div class="balls"></div>
+        <div class="balls"></div>
+        <div class="balls"></div>
+        <div class="balls"></div>
+      </br>
+        <button type="button" onclick="startGame()">Start game</button>
+        <button type="button" onclick="endGame()">Stop game</button>
+      </section>
+      <section id="bottom">
         <div id="gameOverNotification">
-          Uups, you pushed the wrong button! GAME OVER LOOSER!
+          Uups, you pushed the wrong button!
+          <p id="score">Your score is</p>
+          <button type="button" id="close" onclick="reloadGame()">close</button>
         </div>
-      </main>
+      </section>
     </div>
     <script src="speedgame.js"></script>
   </body>
