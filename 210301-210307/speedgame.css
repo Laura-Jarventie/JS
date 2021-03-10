@@ -32,6 +32,7 @@ h1 {
   display: inline-block;
   border-radius: 50px;
   position: relative;
+  pointer-events: ;
 }
 
 .balls.active {
@@ -49,10 +50,6 @@ button {
   margin: 1rem;
   color: white;
   border: none;
-}
-
-#score {
-  margin: 2rem;
 }
 
 #bottom {

@@ -2,6 +2,11 @@ let buttons = document.querySelectorAll(".balls");
 let scoreDisplay = document.querySelector("#score");
 let overlay = document.getElementById("bottom");
 let gameoverBox = document.getElementById("gameOverNotification");
+let speed = 2000;
+
+let startingButton = document.getElementById("startGame");
+
+let endingButton = document.getElementById("endGame");
 
 //query selector all is returning Node list, so all objects have index
 buttons[0].onclick = function () {
@@ -25,17 +30,28 @@ let score = 0;
 //I get the number from above, pass it to arrow function, and console log it, so it will show which ball is clicked.
 const clicked = (i) => {
   console.log("clicked", i);
-  score++;
-  scoreDisplay.textContent = `Your score: ${score}`;
+  if (i === active) {
+    score++;
+    scoreDisplay.textContent = `Your score: ${score}`;
+    speed = speed - 100;
+  } else {
+    console.log("WRONG!");
+    endGame();
+  }
 };
 
+//this get´s balls to be active randomly
 const getRandomInt = (min, max) => {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 };
+
 let active = 0;
 
 const startGame = () => {
-  console.log("started");
+  //console.log("started");
+  for (let i = 0; i < buttons.length; i++) {
+    buttons[i].style.pointerEvents = "auto";
+  }
 
   let nextActive = pickNew(active);
 
@@ -46,7 +62,7 @@ const startGame = () => {
 
   console.log("active:", active);
 
-  timer = setTimeout(startGame, 5000);
+  timer = setTimeout(startGame, speed);
 
   function pickNew(active) {
     let followingActive = getRandomInt(0, 3);
@@ -58,12 +74,14 @@ const startGame = () => {
   }
 };
 
-// this is how you start testing that button is found
-//if I put textConter the text and button will disappear! Why?
+startingButton.addEventListener("click", startGame);
+
+//if I put textContent the message and button will disappear! Why?
 const endGame = () => {
   clearTimeout(timer);
   console.log("close");
   overlay.style.visibility = "visible";
+  gameoverBox.textContent = "Your score: " + score;
 };
 
 //close button will reload the page
@@ -71,22 +89,11 @@ const reloadGame = () => {
   window.location.reload();
 };
 
-if (active === clicked) {
-  console.log("correct");
+endingButton.addEventListener("click", endGame);
+
+endingButton.style.visibility = "hidden";
+
+if ((startingButton = "click")) {
+  startingButton.style.visibility = "hidden";
+  endingButton.style.visibility = "visible";
 }
-
-/*
-const endGame = () => {
-  for (let i = 0; i < button.length; i++) {
-    button[i].addEventListener("click", end);
-  }
-  if (nav.classList.contains("responsive")) {
-    nav.classList.remove("responsive");
-    document.body.style.overflow = "";
-  } else {
-    nav.classList.add("responsive");
-    document.body.style.overflow = "hidden";
-  }
-};
-
-buttonendGame.addEventListener("click", endGame);*/

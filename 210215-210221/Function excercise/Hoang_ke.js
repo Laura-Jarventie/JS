@@ -28,6 +28,19 @@ function executeScript() {
   console.log("the oldest person is", oldestPerson.name, oldestPerson.age);
 })();
 
+//sorting users logic without using method sort()
+function sortUsers(userObjs) {
+  for (let i = 0; i < userObjs.length - 1; i++) {
+    for (let j = i + 1; j < userObjs.length; j++) {
+      if (userObjs[i].dob.age > userObjs[j].dob.age) {
+        let temp = userObjs[j];
+        userObjs[j] = userObjs[i];
+        userObjs[i] = temp;
+      }
+    }
+  }
+}
+
 function renderTable(userObjs) {
   document.getElementById("myTable").innerHTML = ``; //clear the table content
   userObjs.forEach((user) => addUser(user)); //iterate through user objecets array, and for each of them adds user (ie calls addUser function).//
@@ -42,6 +55,7 @@ function getOldest(userObjs) {
   }
   return oldest;
 }
+
 //add user function expects array of userObjects as input and for each objects (ie user) add´s new row.//
 function addUser(userObj) {
   let newRow = document.createElement("tr");
@@ -83,34 +97,3 @@ function getUsers() {
     },
   ];
 }
-
-/*
-var userList = users;
-var userToAdd = new addUser(userList);
-/*
-function addUser(getUsers) {
-  console.log(arguments[0]);
-}
-
-addUser(getUsers);
-/*
-class User {
-  constructor(studentNo, name, age) {
-    this.studentNo = studentNo;
-    this.name = name;
-    this.age = age;
-  }
-}
-
-let Users = [];
-
-let laura = new User(000, "Laura", 40);
-
-Users.push(laura);
-
-
-
-
-
-
-*/

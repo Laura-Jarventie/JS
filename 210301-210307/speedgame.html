@@ -21,13 +21,13 @@
         <div class="balls"></div>
         <div class="balls"></div>
       </br>
-        <button type="button" onclick="startGame()">Start game</button>
-        <button type="button" onclick="endGame()">Stop game</button>
+        <button type="button" button id="startGame">Start game</button>
+        <button type="button" button id="endGame">Stop game</button>
       </section>
       <section id="bottom">
-        <div id="gameOverNotification">
+        <div>
           Uups, you pushed the wrong button!
-          <p id="score">Your score is</p>
+          <p id="gameOverNotification"></p>
           <button type="button" id="close" onclick="reloadGame()">close</button>
         </div>
       </section>
