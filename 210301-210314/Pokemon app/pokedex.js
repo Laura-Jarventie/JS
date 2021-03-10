@@ -1,23 +1,34 @@
 (function () {
   document.addEventListener("DOMContentLoaded", executeScript);
 
-  function executeScript() {
-    fetch("https://pokeapi.co/api/v2/pokemon?offset=0&limit=10")
-      .then((resp) => resp.json())
-      .then((json) => {
-        /* { results: [], info: {}} so we wait API call first and then when it is ready, go through with forEach() and add users */
-        json.results.forEach(addUser);
+  const POKEMON_URL = "https://pokeapi.co/api/v2/pokemon?offset=0&limit=100";
+  let pokemons = [];
+
+  async function executeScript() {
+    let json = await (await fetch(POKEMON_URL)).json();
+    pokemons = json.results;
+    pokemons.forEach(addUser);
+
+    document.querySelectorAll(".user .name").forEach((e) => {
+      e.addEventListener("click", async (e) => {
+        let json = await (
+          await fetch(e.target.getAttribute("data-url"))
+        ).json();
+        console.log(json.sprites.front_default);
+        document
+          .getElementById("current-user")
+          .setAttribute("src", json.sprites.front_default);
       });
+    });
   }
 
   function addUser(user) {
     const newEl = document.createElement("div");
     newEl.className = "user";
     newEl.innerHTML = `
-        <div class="name">${user.name}</div>
-        <div class="url">${user.url}</div>
-        
-        
+        <div class="name" data-url="${user.url}">
+        ${user.name}</div>
+           
     `;
 
     document.getElementById("user-list").appendChild(newEl);
@@ -26,36 +37,29 @@
   }
 
   function showInfo() {
-    let pokemonBtns = document.querySelectorAll("div");
-    /*
-    for (let i = 0; i < pokemonBtns.length; i++) {
-      pokemonBtns[i].onclick = function () {
-        clicked(i);
-      };
-    }
-    function clicked(index) {
-      document.getElementById("picture").innerHTML = "";
-      console.log(newEl);
-      console.log(`${user.url}`);
-      console.log(`why are you not printing???`);
-    }*/
+    let pokemons = document.querySelectorAll("div");
   }
 })();
-/*
-function showPicture() {
-  fetch("https://pokeapi.co/api/v2/pokemon?offset=0&limit=10")
-    .then((resp) => resp.json())
-    .then((json) => {
-      json.results.forEach(addLink);
-    });
 
-  function addLink(user) {
-    const newEl = document.createElement("div");
-    newEl.className = "user";
-    newEl.innerHTML = `
-          <div class="name">${user.name}</div>
-      `;
-    document.getElementById("user-list").appendChild(newEl);
+/* This is the original code step by step. In above same code but in better and neater way
+
+function executeScript() {
+    fetch(POKEMON_URL)
+      .then((resp) => resp.json())
+      .then((json) => {
+        json.results.forEach(addUser);
+        document.querySelectorAll(".user .name").forEach((e) => {
+          e.addEventListener("click", (e) => {
+            fetch(e.target.getAttribute("data-url"))
+              .then((resp) => resp.json())
+              .then((json) => {
+                console.log(json.sprites.front_default);
+                document
+                  .getElementById("current-user")
+                  .setAttribute("src", json.sprites.front_default);
+              });
+          });
+        });
+      });
   }
-}
-*/
+  */
