@@ -1,11 +1,22 @@
-class Car {
-  constructor(licence, maker, model, price, color) {
-    this.licence = licence;
-    this.maker = maker;
-    this.model = model;
-    this.price = price;
-    this.color = color;
-  }
+let formInput = document.querySelector("#inputData");
+let formSearch = document.querySelector("#searchData");
+
+function Car(licence, maker, model, price, color) {
+  this.licence = licence;
+  this.maker = maker;
+  this.model = model;
+  this.price = price;
+  this.color = color;
+  this.discount = function () {
+    if (this.carPrice >= 20000) {
+      this.discount = this.carPrice * 0.25;
+    } else if (this.carPrice <= 5000) {
+      this.discount = this.carPrice * 0.1;
+    } else {
+      this.discount = this.carPrice * 0.15;
+    }
+  };
+  this.discount();
 }
 
 let cars = [];
@@ -15,9 +26,31 @@ let lauran = new Car("343faa", "Lada", "classic", 10000, "Lada");
 
 cars.push(aksun);
 cars.push(lauran);
+
+const searchCar = (event) => {
+  event.preventDefault();
+
+  let licence = document.querySelector("#searchLicence").value;
+  let text = document.querySelector("p");
+  formSearch.reset();
+  if (carArray.length == 0) {
+    text.textContent = "Please enter car first";
+  } else {
+    for (const i of carArray) {
+      if (i.licencePlate == licence) {
+        return (text.textContent = `Licence number ${i.licencePlate} is ${i.manufacturer} ${i.carModel} and your discount is ${i.discount}`);
+      } else {
+        text.textContent = `There is no car with that licence plate added to the system. Try again?`;
+      }
+    }
+  }
+};
+
+formInput.addEventListener("submit", addCar);
+formSearch.addEventListener("submit", searchCar);
+
 /*
- */
-/*
+
 let text = document.querySelector("p");
 text.textContent = "Search plate";
 // console.log(cars[1]);
@@ -26,6 +59,7 @@ let submit = document.getElementById("#submit");
 
 // let car = new Car(licence, maker, model, price, color);
 */
+/*
 document.getElementById("submit").addEventListener("click", () => {
   let car = new Car();
   car.licence = document.getElementById("licence").value;
@@ -76,4 +110,4 @@ if (cars[i].licence == userInput) {
     }
   }
 }
-console.log(cars[i].price);
+console.log(cars[i].price); */
