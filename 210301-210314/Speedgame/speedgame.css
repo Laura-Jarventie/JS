@@ -6,7 +6,7 @@
 
 body {
   font-family: "Noto Sans", sans-serif;
-  background-color: yellowgreen;
+  background-color: rgb(144, 245, 12);
 }
 
 .container {
@@ -36,7 +36,11 @@ h1 {
 }
 
 .balls.active {
-  background-color: rgb(199, 90, 18);
+  background-image: url("Milli.png");
+  background-color: black;
+  background-size: 110%;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .balls:active {
@@ -76,4 +80,18 @@ button {
   border: solid black;
   border-radius: 2%;
   padding: 1rem;
+}
+
+.invisible {
+  display: none;
+}
+.hidden {
+  visibility: hidden;
+}
+.notClickable {
+  pointer-events: auto;
+  cursor: pointer;
+}
+.show {
+  display: block;
 }
