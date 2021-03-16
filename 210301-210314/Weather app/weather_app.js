@@ -1,6 +1,8 @@
 /*document
     .getElementById("renderWeather")
-    .addEventListener("click", executeScript());*/
+    .addEventListener("click", executeScript());
+    .container.addEventListener("submit", daysLeft); TÄMÄN PITÄIS TOIMIA!
+    */
 
 const tempElement = document.getElementById("temperatureValue");
 const descElement = document.querySelector(".temperatureDescription p");
