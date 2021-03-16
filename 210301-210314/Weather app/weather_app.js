@@ -2,7 +2,7 @@
     .getElementById("renderWeather")
     .addEventListener("click", executeScript());*/
 
-const tempElement = document.querySelector(".temperatureValue p");
+const tempElement = document.getElementById("temperatureValue");
 const descElement = document.querySelector(".temperatureDescription p");
 const locationElement = document.querySelector(".location p");
 const notificationElement = document.querySelector(".notification");
@@ -34,7 +34,7 @@ fetch(api)
   });
 
 function displayWeather() {
-  tempElement.innerHTML = `${weather.temperature.value}°<span>C</span>`;
+  temperatureValue.innerHTML = `${weather.temperature.value}°<span>C</span>`;
   descElement.innerHTML = weather.description;
   locationElement.innerHTML = `${weather.city}, ${weather.country}`;
 }
