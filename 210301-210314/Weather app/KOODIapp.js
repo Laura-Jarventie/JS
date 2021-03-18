@@ -49,3 +49,37 @@ function displayDaylight() {
   let timestrS = dateS.toISOString();
   sunsetElement.innerHTML = timestrS;
 }
+/*
+let sec = 1616041674 + 7200;
+let date = new Date(sec * 1000);
+let timestr = date.tolocaleTimeString();
+console.log(timeStr);
+
+let sec = 1616041674 + 7200;
+var date = new Date(sec*1000)
+let timestr = -date.getTimezoneOffset()*60000;
+console.log(timestr); 
+
+let sec = 1616041674 + 7200;
+let dateS = new Date(sec * 1000);
+  let timestrS = dateS.toISOString();
+  moment(timestrS);
+
+london
+sunrise: 1616047655
+sunset: 1616090971
+timezone: 0
+
+helsinki
+unrise: 1616041674
+sunset: 1616084925
+timezone: 7200
+*/
+<div class="sunrise_set">
+  <div class="sunrise">
+    <p>-</p>
+  </div>
+  <div class="sunset">
+    <p>-</p>
+  </div>
+</div>;
