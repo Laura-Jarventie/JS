@@ -1,28 +1,101 @@
 * {
-  font-family: "Rimouski";
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  line-height: 1.6;
 }
-
-body {
-  background-color: #293251;
-}
-
 .container {
   width: 300px;
-  background-color: #fff;
-
+  height: 300px;
+  background-color: rgba(255, 255, 255, 0.5);
   display: block;
-  margin: 0 auto;
-
+  margin-top: 100px;
   border-radius: 10px;
   padding-bottom: 50px;
 }
 
+body {
+  font-family: "Raleway", sans-serif;
+  height: 50vh;
+  background: url(https://source.unsplash.com/9AqIdzEc9pY/1600x900) no-repeat
+    fixed center center/cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+header {
+  display: flex;
+  height: 50px;
+  justify-content: center;
+  align-items: center;
+  /* position: fixed; */
+  top: 0;
+  background-color: transparent;
+  /* width: 100%; */
+}
+#data-area {
+  display: none;
+}
+
+.showIt {
+  display: block;
+}
+
+form {
+  margin-top: 50px;
+  padding: 10px;
+}
+
+h2 {
+  font-weight: 300;
+  font-size: 2.5rem;
+  margin-top: 10px;
+}
+
+input,
+textarea,
+button {
+  font-family: "Raleway", sans-serif;
+}
+
+.city input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #a4a4a4;
+  border-radius: 5px;
+  font-size: 13px;
+}
+
+p {
+  margin-top: 10px;
+  margin-left: 10px;
+  margin-bottom: 10px;
+}
+
+button {
+  align-items: center;
+  border: 1px solid #a4a4a4;
+  margin-top: 20px;
+  padding-right: 10px;
+  padding-left: 10px;
+  font-size: 13px;
+  margin-left: 100px;
+}
+
+.container {
+  width: 300px;
+  background-color: 255, 255, 255, 255, 0.5;
+  display: block;
+  margin: 0 auto;
+  border-radius: 10px;
+  padding-bottom: 50px;
+}
 .app-title {
   width: 300px;
   height: 50px;
   border-radius: 10px 10px 0 0;
 }
-
 .app-title p {
   text-align: center;
   padding: 15px;
@@ -30,42 +103,32 @@ body {
   font-size: 1.2em;
   color: #293251;
 }
-
 .notification {
   background-color: #f8d7da;
   display: none;
 }
-
 .notification p {
-  color: #721c24;
+  background-color: #721c24;
   font-size: 1.2em;
   margin: 0;
   text-align: center;
   padding: 10px 0;
 }
-
 .weather-container {
   width: 300px;
   height: 260px;
-  background-color: #f4f9ff;
+  background-color: rgba(255, 255, 255, 0.5);
 }
-
 .weather-icon {
   width: 300px;
   height: 128px;
+  /* background-color: #721c24; */
 }
-
 .weather-icon img {
   display: block;
   margin: 0 auto;
 }
-
-.temperature-value {
-  width: 300px;
-  height: 60px;
-}
-
-.temperature-value p {
+.temp-value p {
   padding: 0;
   margin: 0;
   color: #293251;
@@ -73,33 +136,300 @@ body {
   text-align: center;
   cursor: pointer;
 }
-
-.temperature-value p:hover {
-}
-
-.temperature-value span {
+/* .temp-value p:hover {
+} */
+.temp-value span {
   color: #293251;
   font-size: 0.5em;
 }
-
-.temperature-description {
-}
-
-.temperature-description p {
+/* .temp-description {
+} */
+.temp-description p {
   padding: 8px;
   margin: 0;
   color: #293251;
   text-align: center;
   font-size: 1.2em;
 }
-
-.location {
-}
-
+/* .location {
+} */
 .location p {
   margin: 0;
   padding: 0;
   color: #293251;
   text-align: center;
   font-size: 0.8em;
+}
+
+.sunrise_set {
+  width: 300px;
+  height: 200px;
+  background-color: rgba(255, 255, 255, 0.459);
+  border-radius: 10px;
+  margin-top: 10px;
+  text-align: center;
+  padding-top: 10px;
+}
+
+/********Windmill styles:**********/
+.windmill-container {
+  width: 300px;
+  height: 278px;
+  background-color: rgba(255, 255, 255, 0.459);
+  border-radius: 10px;
+  text-align: center;
+  padding-top: 10px;
+}
+#windmill {
+  width: 300px;
+  height: 30%;
+  margin: 1rem auto 0;
+  position: relative;
+  z-index: 10;
+}
+
+.post {
+  position: absolute;
+  width: 5px;
+  height: 80px;
+
+  background-color: #bababa;
+  /* background-image: linear-gradient(to top, var(--windmillcolor) 0%, darken(var(--windmillcolor), 20%) 100%); */
+  top: 145px;
+  left: 145px;
+  border-radius: 3px;
+}
+
+.engine {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background-color: #bababa;
+  /* background-image: linear-gradient(to bottom, var(--windmillcolor) 0%, darken var(--windmillcolor) 20%, 100%); */
+  top: 137px;
+  left: 142px;
+  border-radius: 2px;
+}
+
+.head {
+  width: 5px;
+  height: 5px;
+  position: absolute;
+  top: 140px;
+  left: 145px;
+  z-index: 1000;
+  background-color: #696969;
+  border-radius: 50%;
+}
+
+.flaps {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  top: 90px;
+  left: 99px;
+  animation: rotatemill 10s linear infinite;
+}
+.speed1 {
+  animation: rotatemill 8s linear infinite;
+}
+.speed2 {
+  animation: rotatemill 4s linear infinite;
+}
+.speed3 {
+  animation: rotatemill 2s linear infinite;
+}
+.speed4 {
+  animation: rotatemill 1s linear infinite;
+}
+.speed5 {
+  animation: rotatemill 0.2s linear infinite;
+}
+
+.flap {
+  width: 3px;
+  height: 60px;
+  position: absolute;
+  background-color: #979797;
+  /* background: linear-gradient(to bottom, var(--windmillcolor) 0%, darken(var(--windmillcolor), 20%) 100%); */
+  /* border-top-left-radius: 5px 20px; */
+}
+
+.flaps .flap:nth-child(1) {
+  top: -10px;
+  left: 50px;
+}
+
+.flaps .flap:nth-child(2) {
+  top: 35px;
+  left: 75px;
+  transform: rotate(120deg);
+}
+
+.flaps .flap:nth-child(3) {
+  top: 35px;
+  left: 22px;
+  transform: rotate(240deg);
+}
+.bulb {
+  height: 8px;
+  width: 8px;
+  position: absolute;
+  top: 133px;
+  left: 143px;
+  background: red;
+  border-radius: 50%;
+  animation: lightbulblight 2s linear infinite;
+  z-index: -1;
+}
+
+@keyframes rotatemill {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-360deg);
+  }
+}
+@keyframes lightbulblight {
+  0% {
+    background: rgba(49, 7, 7, 0.733);
+    box-shadow: 0 0 0 #290707;
+  }
+
+  50% {
+    background: lighten(#f12a2a, 60%);
+    box-shadow: 0 0 10px lighten(#110303, 60%);
+  }
+}
+
+/*Air quality card*/
+
+#pollutionInfo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 7vh;
+}
+.pollutionGrid {
+  width: 300px;
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  grid-template-columns: 3.5rem 2rem 2rem 6rem;
+  grid-template-rows: 3.5rem repeat(5, 3.5rem);
+  grid-template-areas:
+    "a a a a"
+    "e j c o"
+    "f k c p"
+    "g l c q"
+    "h m c r"
+    "i n c s";
+  grid-gap: 0.5rem;
+  position: relative;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 10px;
+}
+#headline {
+  font-size: 24px;
+  grid-area: a;
+  text-align: center;
+  margin-top: 1.5rem;
+}
+
+/*Values*/
+
+.pollutionValues {
+  font-size: 20px;
+  text-align: right;
+  margin-right: 1rem;
+  font-weight: bold;
+}
+
+#valueRed {
+  grid-area: i;
+}
+#valueOrange {
+  grid-area: h;
+}
+#valueYellow {
+  grid-area: g;
+}
+#valueLightGreen {
+  grid-area: f;
+}
+#valueGreen {
+  grid-area: e;
+}
+
+/*Triangles*/
+
+.triangle-down {
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  transform: rotate(270deg);
+}
+.triangle-down p {
+  font-size: 12px;
+}
+#redTriangle {
+  grid-area: n;
+  border-top: 20px solid red;
+}
+#orangeTriangle {
+  grid-area: m;
+  border-top: 20px solid orange;
+}
+#yellowTriangle {
+  border-top: 20px solid yellow;
+  grid-area: l;
+}
+#lightGreenTriangle {
+  border-top: 20px solid rgb(188, 235, 135);
+  grid-area: k;
+}
+#greenTriangle {
+  border-top: 20px solid green;
+  grid-area: j;
+}
+/*Pollution bar*/
+.bar {
+  grid-area: c;
+  height: 95%;
+  width: 2rem;
+  background: linear-gradient(
+    to top,
+    red,
+    orange,
+    yellow,
+    rgb(188, 235, 135),
+    green
+  );
+  border-radius: 5px;
+  margin-bottom: 1rem;
+}
+
+/*Descriptions */
+
+.descriptions {
+  font-size: 16px;
+  padding-left: 1rem;
+  padding-right: 0.6rem;
+}
+#descRed {
+  grid-area: s;
+}
+#descOrange {
+  grid-area: r;
+}
+#descYellow {
+  grid-area: q;
+}
+#descLightGreen {
+  grid-area: p;
+}
+#descGreen {
+  grid-area: o;
 }
