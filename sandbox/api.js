@@ -69,17 +69,20 @@ function displayWeather() {
   descElement.innerHTML = weather.description;
   locationElement.innerHTML = `${weather.city}, ${weather.country}`;
 }
-
+//NEW
 function displayDaylight() {
-  //NEW
   let secRise = weather.sunrise;
-  let dateR = new Date(secRise * 1000);
-  let timestrR = dateR.toISOString();
-  sunriseElement.innerHTML = timestrR;
+  let dateRise = new Date(secRise * 1000);
+  let timestrRise = dateRise.toISOString();
+  let dataSplittedTo2 = timestrRise.split("T");
+  let dataSplittedAgain = dataSplittedTo2[1].split(".");
+  sunriseElement.innerHTML = dataSplittedAgain[0];
   let secSet = weather.sunset;
-  let dateS = new Date(secSet * 1000);
-  let timestrS = dateS.toISOString();
-  sunsetElement.innerHTML = timestrS;
+  let dateSet = new Date(secSet * 1000);
+  let timestrSet = dateSet.toISOString();
+  let dataSplittedToTwo = timestrSet.split("T");
+  let dataSplitted = dataSplittedToTwo[1].split(".");
+  sunsetElement.innerHTML = dataSplitted[0];
 }
 
 function displayWind() {
